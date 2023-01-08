@@ -1,7 +1,8 @@
 package ru.netology.statistics;
 
-import org.junit.Test;
+//import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+import org.testng.annotations.Test;
 import ru.netology.statistics.SalesAmountService;
 
 public class SalesAmountServiceTest {
@@ -27,7 +28,7 @@ public class SalesAmountServiceTest {
         int[] months = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedMonthlySalesSum = 15;
-        int actualAmountOfSalesSum = service.getSalesSum(months);
+        int actualAmountOfSalesSum = service.getMonthlySalesSum(months);
 
         Assertions.assertEquals(expectedMonthlySalesSum, actualAmountOfSalesSum);
     }
@@ -40,7 +41,7 @@ public class SalesAmountServiceTest {
         int[] months = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedMaxMonth = 8;
-        int actualMaxMonth = service.getSalesSum(months);
+        int actualMaxMonth = service.getMaxMonth(months);
 
         Assertions.assertEquals(expectedMaxMonth, actualMaxMonth);
     }
@@ -53,7 +54,7 @@ public class SalesAmountServiceTest {
         int[] months = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedMinMonth = 9;
-        int actualMinMonth = service.getSalesSum(months);
+        int actualMinMonth = service.getMinMonth(months);
 
         Assertions.assertEquals(expectedMinMonth, actualMinMonth);
     }
@@ -66,7 +67,7 @@ public class SalesAmountServiceTest {
         int[] months = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedBelowTheAverage = 5;
-        int actualBelowTheAverage = service.getSalesSum(months);
+        int actualBelowTheAverage = service.getSalesBelowTheAverage(months);
 
         Assertions.assertEquals(expectedBelowTheAverage, actualBelowTheAverage);
     }
@@ -79,7 +80,7 @@ public class SalesAmountServiceTest {
         int[] months = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedAboveTheAverage = 5;
-        int actualAboveTheAverage = service.getSalesSum(months);
+        int actualAboveTheAverage = service.getSalesAboveTheAverage(months);
 
         Assertions.assertEquals(expectedAboveTheAverage, actualAboveTheAverage);
     }
